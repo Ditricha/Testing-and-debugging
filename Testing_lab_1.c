@@ -91,8 +91,16 @@ int main()
 		printf("\n");
 	}
 
+	for (i = 0; i < row1; i++)
+		free(matrix_1[i]);
 	free(matrix_1);
+
+	for (i = 0; i < row2; i++)
+			free(matrix_2[i]);
 	free(matrix_2);
+
+	for (i = 0; i < row1; i++)
+		free(resulting_matrix[i]);
 	free(resulting_matrix);
 
 	getchar();
