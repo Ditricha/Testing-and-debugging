@@ -13,11 +13,11 @@ int main()
 	
 	//ввод данных двух матриц
 	printf("-First matrix-\n");
-	printf("Enter the number of rows and columns. The numbers must meet the '0 < number <= 10' criteria.\n");
+	printf("Enter the number of rows and columns. The numbers must meet the '0 < number < 10' criteria.\n");
 	scanf_s("%d %d", &row1, &col1);
 
 	printf("\n-Second matrix-\n");
-	printf("Enter the number of rows and columns. The numbers must meet the '0 < number <= 10' criteria \nand be equal to the number of columns (rows) or rows (columns) of the first matrix.\n");
+	printf("Enter the number of rows and columns. The numbers must meet the '0 < number < 10' criteria \nand be equal to the number of columns (rows) or rows (columns) of the first matrix.\n");
 	scanf_s("%d %d", &row2, &col2);
 
 	//проверка на правильный ввод
@@ -30,7 +30,7 @@ int main()
 		return 0;
 	}
 	if (row1 > 10 || col1 > 10 || row2 > 10 || col2 > 10) {
-		printf("\nError: the number of rows or columns is too big doesn't meet the '0 < number <= 10' criteria.\n");
+		printf("\nError: the number of rows or columns is too big doesn't meet the '0 < number < 10' criteria.\n");
 		return 0;
 	}
 
@@ -90,7 +90,8 @@ int main()
 			printf("%d ", resulting_matrix[i][j]);
 		printf("\n");
 	}
-
+	
+	//освобождение памяти
 	for (i = 0; i < row1; i++)
 		free(matrix_1[i]);
 	free(matrix_1);
