@@ -26,7 +26,7 @@ int main()
 		return 0;
 	}
 	if (row1 <= 0 || col1 <= 0 || row2 <= 0 || col2 <= 0) {
-		printf("\nError: the number of rows or columns can't be a negative one.\n");
+		printf("\nError: the number of rows or columns can't be a negative one or zero.\n");
 		return 0;
 	}
 	if (row1 > 10 || col1 > 10 || row2 > 10 || col2 > 10) {
@@ -39,13 +39,21 @@ int main()
 	for (i = 0; i < row1; i++)
 		matrix_1[i] = (int*)calloc(col1, sizeof(int));
 
-	printf("\nElements of the first matrix:");
+	printf("\nElements of the first matrix (must be greater than zero):");
 	for (i = 0; i < row1; i++) {
 		for (j = 0; j < col1; j++) {
 			scanf_s("%d", &matrix_1[i][j]);
 		}
 	}
-
+	//проверка на правильный ввод элементов
+	for (i = 0; i < row1; i++) {
+        	for (j = 0; j < col1; j++)
+            		if (matrix_1[i][j] < 0) {
+                		printf("\nError: all elements must be greater than zero.");
+               			return 0;
+            		}
+    		}
+	
 	printf("\n");
 	for (i = 0; i < row1; i++) {
 		for (j = 0; j < col1; j++)
@@ -58,13 +66,21 @@ int main()
 	for (i = 0; i < row2; i++)
 		matrix_2[i] = (int*)calloc(col2, sizeof(int));
 
-	printf("\nElements of the second matrix:");
+	printf("\nElements of the second matrix (must be greater than zero:");
 	for (i = 0; i < row2; i++) {
 		for (j = 0; j < col2; j++) {
 			scanf_s("%d", &matrix_2[i][j]);
 		}
 	}
-
+	//проверка на правильный ввод элементов
+	for (i = 0; i < row2; i++) {
+        	for (j = 0; j < col2; j++)
+            		if (matrix_2[i][j] < 0) {
+                		printf("\nError: all elements must be greater than zero.");
+               			return 0;
+            		}
+    		}
+	
 	printf("\n");
 	for (i = 0; i < row2; i++) {
 		for (j = 0; j < col2; j++)
