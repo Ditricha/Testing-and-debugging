@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <conio.h>
 #include <malloc.h>
+#include "MatrixMult.h"
 
 void print_matrix(int **matrix, int row, int col);
 int** multiplication(int **matrix_1, int row1, int col1, int **matrix_2, int row2, int col2);
