@@ -12,12 +12,6 @@ namespace MatrixMultTest
 	TEST_CLASS(MatrixMultTest)
 	{
 	public:
-		
-		//TEST_METHOD(TestMethod1)
-		//{
-		//	Assert::IsTrue(row1 == col2, L"Assert 1");
-		//	Assert::IsTrue(row2 == col1, L"Assert 2");
-		//}
 
 		TEST_METHOD(TestMethod1)
 		{
