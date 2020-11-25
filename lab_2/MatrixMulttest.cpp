@@ -1,6 +1,6 @@
 ﻿#include "pch.h"
 #include "CppUnitTest.h"
-#include "..\Ishkova-Zapolskaia_lab_1\MatrixMult.h"
+#include "..\Ishkova-Zapolskaia_lab_2\MatrixMult.h"
 
 
 
