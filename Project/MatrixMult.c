@@ -1,4 +1,4 @@
-﻿#include <stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <conio.h>
 #include <malloc.h>
@@ -22,15 +22,15 @@ int main()
 	//проверка на правильный ввод
 	if (col1 != row2 || col2 != row1) {
 		printf("\nError: the numbers of rows and columns of two matrixes aren't equal.\n");
-		return 0;
+		return -1;
 	}
 	if (row1 < 0 || col1 < 0 || row2 < 0 || col2 < 0) {
 		printf("\nError: the number of rows or columns can't be a negative one or zero.\n");
-		return 0;
+		return -1;
 	}
 	if (row1 > 10 || col1 > 10 || row2 > 10 || col2 > 10) {
 		printf("\nError: the number of rows or columns is too big to meet the '0 < number <= 10' criteria.\n");
-		return 0;
+		return -1;
 	}
 
 	//ввод элементов первой матрицы
@@ -45,12 +45,12 @@ int main()
 		}
 	}
 
-	проверка на условие элементов
+	//проверка на условие элементов
 	for (i = 0; i < row1; i++) {
 		for (j = 0; j < col1; j++)
 			if (matrix_1[i][j] <= 0) {
 				printf("\nError: all elements must be greater than zero.");
-				return 0;
+				return -1;
 			}
 	}
 
@@ -74,12 +74,12 @@ int main()
 		}
 	}
 
-	проверка на условие элементов
+	//проверка на условие элементов
 	for (i = 0; i < row2; i++) {
 		for (j = 0; j < col2; j++)
 			if (matrix_2[i][j] <= 0) {
 				printf("\nError: all elements must be greater than zero.");
-				return 0;
+				return -1;
 			}
 	}
 
