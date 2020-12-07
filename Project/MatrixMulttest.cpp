@@ -1,4 +1,4 @@
-﻿#include "pch.h"
+#include "pch.h"
 #include "CppUnitTest.h"
 #include "..\Ishkova-Zapolskaia_lab_1\MatrixMult.h"
 
@@ -13,60 +13,49 @@ namespace MatrixMultTest
 	{
 	public:
 		
-	//	TEST_METHOD(TestMethod1)
-	//	{
-	//	int row1, row2, col1, col2;
-	//	row1 = col2 = 2;
-	//	row2 = col1 = 2;
-	//	double** a; double** b; double** c;
+		TEST_METHOD(TestMethod100)
+		{
+			int standard[2][3] = { 1, 1, 1, 1, 1, 1 };
 
-	//	int etalon[2][2] = { 1,1,1,1 };
+			int row1, col1, row2, col2;
+			row1 = col2 = 2;
+			row2 = col1 = 3;
+			int **matrix_1; int **matrix_2; int **resulting_matrix;
 
-	//	//1 matrica
-	//	a = new double* [row1];
-	//	for (int i = 0; i < row1; i++)
-	//	{
-	//		a[i] = new double[col1];
-	//		for (int j = 0; j < col1; j++)
-	//		{
-	//			a[i][j] = 1;
-	//		}
-	//	}
-	//	//2 matrica
-	//	b = new double* [row2];
-	//	for (int i = 0; i < row2; i++)
-	//	{
-	//		b[i] = new double[col2];
-	//		for (int j = 0; j < col2; j++)
-	//		{
-	//			b[i][j] = 1;
-	//		}
-	//	}
-	//	//перемножение
+			matrix_1 = (int**)calloc(row1, sizeof(int));
+			for (int i = 0; i < row1; i++)
+				matrix_1[i] = (int*)calloc(col1, sizeof(int));
+			
+			for (int i = 0; i < row1; i++) {
+				for (int j = 0; j < col1; j++) {
+					matrix_1[i][j] = 1;
+				}
+			}
 
-	//	//вызвать модуль отвечающий за перемножение матриц func();
-	//	c = new double* [row1];
-	//	for (int i = 0; i < row1; i++)
-	//	{
-	//		c[i] = new double[col2];
-	//		for (int j = 0; j < col2; j++)
-	//		{
-	//			c[i][j] = 0;
-	//			for (int k = 0; k < col1; k++)
-	//				c[i][j] = a[i][k] * b[k][j];
-	//		}
-	//	}
+			matrix_2 = (int**)calloc(row2, sizeof(int));
+			for (int i = 0; i < row2; i++)
+				matrix_2[i] = (int*)calloc(col2, sizeof(int));
+			
+			for (int i = 0; i < row2; i++) {
+				for (int j = 0; j < col2; j++) {
+					matrix_2[i][j] = 1;
+				}
+			}
+
+			resulting_matrix = (int**)calloc(row1, sizeof(int));
+			for (int i = 0; i < row1; i++)
+				resulting_matrix[i] = (int*)calloc(col2, sizeof(int));
+
+			resulting_matrix = multiplication(matrix_1, row1, col1, matrix_2, row2, col2);
 
 
-	//	//сравнение через Assert
-	//	for (int i = 0; i < row2; i++)
-	//	{
-	//		for (int j = 0; j < col2; j++)
-	//		{
-	//			Assert::IsTrue(etalon[i][j] == c[i][j]);
-	//		}
-	//	}
-	//}
+			//сравнение через Assert
+			for (int i = 0; i < row2; i++) {
+				for (int j = 0; j < col2; j++) {
+					Assert::AreEqual(standard[i][j], resulting_matrix[i][j]);
+				}
+			}
+		}
 
 
 		TEST_METHOD(TestMethod1) //тест-метод 2
@@ -98,56 +87,58 @@ namespace MatrixMultTest
 
 		TEST_METHOD(TestMethod4)
 		{
-			i = -32769;
+			int i = -32769;
 			Assert::IsFalse(i > 0);
 		}
 
 		TEST_METHOD(TestMethod5)
 		{
-			i = -32768;
+			int i = -32768;
 			Assert::IsFalse(i > 0);
 		}
 
 		TEST_METHOD(TestMethod6)
 		{
-			i = -32767;
+			int i = -32767;
 			Assert::IsFalse(i > 0);
 		}
 
 		TEST_METHOD(TestMethod7)
 		{
-			i = -1;
+			int i = -1;
 			Assert::IsFalse(i > 0);
 		}
 
 		TEST_METHOD(TestMethod8)
 		{
-			i = 0;
+			int i = 0;
 			Assert::IsFalse(i > 0);
 		}
 
 		TEST_METHOD(TestMethod9)
 		{
-			i = 1;
+			int i = 1;
 			Assert::IsTrue(i > 0);
 		}
 
 		TEST_METHOD(TestMethod10)
 		{
-			i = 32766;
+			int i = 32766;
 			Assert::IsTrue(i > 0);
 		}
 
 		TEST_METHOD(TestMethod11)
 		{
-			i = 32767;
+			int i = 32767;
 			Assert::IsTrue(i > 0);
 		}
 
 		TEST_METHOD(TestMethod12)
 		{
-			i = 32768;
+			int i = 32768;
 			Assert::IsTrue(i > 0);
 		}
 	};
+}
+
 }
