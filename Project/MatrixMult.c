@@ -45,14 +45,14 @@ int main()
 		}
 	}
 
-	//проверка на условие элементов
-	//for (i = 0; i < row1; i++) {
-	//	for (j = 0; j < col1; j++)
-	//		if (matrix_1[i][j] <= 0) {
-	//			printf("\nError: all elements must be greater than zero.");
-	//			return 0;
-	//		}
-	//}
+	проверка на условие элементов
+	for (i = 0; i < row1; i++) {
+		for (j = 0; j < col1; j++)
+			if (matrix_1[i][j] <= 0) {
+				printf("\nError: all elements must be greater than zero.");
+				return 0;
+			}
+	}
 
 	//отображение первой матрицы
 	printf("\n");
@@ -74,14 +74,14 @@ int main()
 		}
 	}
 
-	//проверка на условие элементов
-	//for (i = 0; i < row2; i++) {
-	//	for (j = 0; j < col2; j++)
-	//		if (matrix_2[i][j] <= 0) {
-	//			printf("\nError: all elements must be greater than zero.");
-	//			return 0;
-	//		}
-	//}
+	проверка на условие элементов
+	for (i = 0; i < row2; i++) {
+		for (j = 0; j < col2; j++)
+			if (matrix_2[i][j] <= 0) {
+				printf("\nError: all elements must be greater than zero.");
+				return 0;
+			}
+	}
 
 	//отображение второй матрицы
 	printf("\n");
@@ -109,54 +109,3 @@ int main()
 
 	return 0;
 }
-
-//void print_matrix(int **matrix, int row, int col)
-//{
-//	int i, j;
-//	printf("\n");
-//	for (i = 0; i < row; i++) {
-//		for (j = 0; j < col; j++)
-//			printf("%d ", matrix[i][j]);
-//		printf("\n");
-//	}
-//}
-//
-//int** multiplication(int **matrix_1, int row1, int col1, int **matrix_2, int row2, int col2)
-//{
-//	int i, j, k;
-//	int **resulting_matrix = (int**)calloc(row1, sizeof(int));
-//	for (i = 0; i < row1; i++)
-//		resulting_matrix[i] = (int*)calloc(col2, sizeof(int));
-//
-//	for (i = 0; i < row1; i++)
-//		for (j = 0; j < col2; j++) {
-//			resulting_matrix[i][j] = 0;
-//			for (k = 0; k < col1; k++)
-//				resulting_matrix[i][j] += matrix_1[i][k] * matrix_2[k][j];
-//		}
-//
-//	//вывод результата умножения
-//	for (i = 0; i < row1; i++) {
-//		for (j = 0; j < col2; j++)
-//			printf("%d ", resulting_matrix[i][j]);
-//		printf("\n");
-//	}
-//
-//	return resulting_matrix;
-//
-//	for (i = 0; i < row1; i++)
-//		free(resulting_matrix[i]);
-//	free(resulting_matrix);
-//}
-
-/*print_matrix(matrix_2, row2, col2);*/
-
-/*print_matrix(matrix_1, row1, col1);*/
-
-//заголовочный файл с функцией
-
-//namespace MatrixMultNS
-
-//void print_matrix(int **matrix, int row, int col);
-//int** multiplication(int **matrix_1, int row1, int col1, int **matrix_2, int row2, int col2);
-
